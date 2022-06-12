@@ -1,9 +1,13 @@
 require 'spec_helper'
 
 RSpec.describe HL7::MSH do
+  subject { described_class.new(content) }
+
   let(:content) do
     "MSH|^~\\&|SENDING|SENDING|SENDING|20100401|0900||ADT^A04|123456789|P|2.3"
   end
+
+  it { is_expected.to be_named_as 'MSH' }
 
   it "builds a message with fields" do
     message = HL7::MSH.new(content)

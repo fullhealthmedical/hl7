@@ -13,3 +13,12 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+RSpec::Matchers.define :be_named_as do |expected_name|
+  match do |segment_instance|
+    segment_instance.name == expected_name
+  end
+  failure_message do |segment_instance|
+    "expected that #{segment_instance.class}#name to be #{expected_name}. Actual name is #{segment_instance.name}"
+  end
+end

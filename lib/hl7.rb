@@ -1,4 +1,5 @@
-require 'active_support/core_ext/module/attribute_accessors'
+require "active_support/core_ext/module/attribute_accessors"
+require "active_support/core_ext/string/inflections"
 
 require_relative "hl7/version"
 require_relative "hl7/configuration"

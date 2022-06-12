@@ -1,6 +1,6 @@
 module HL7
   class Segment
-    attr_reader :content
+    attr_reader :content, :configuration
 
     def initialize(content)
       @content = content

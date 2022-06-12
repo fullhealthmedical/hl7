@@ -1,4 +1,6 @@
+require "pry-byebug"
 require "hl7"
+
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

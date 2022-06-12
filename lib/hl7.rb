@@ -2,6 +2,7 @@ require 'active_support/core_ext/module/attribute_accessors'
 
 require_relative "hl7/version"
 require_relative "hl7/configuration"
+require_relative "hl7/field"
 require_relative "hl7/message"
 require_relative "hl7/segment"
 require_relative "hl7/msh"

@@ -5,9 +5,9 @@ RSpec.describe HL7::MSH do
     "MSH|^~\\&|SENDING|SENDING|SENDING|20100401|0900||ADT^A04|123456789|P|2.3"
   end
 
-  xit "builds a message with fields" do
+  it "builds a message with fields" do
     message = HL7::MSH.new(content)
-    expect(message.fields.size).to eq(2)
+    expect(message.fields.size).to eq(12)
   end
 
   context 'reading configuration' do

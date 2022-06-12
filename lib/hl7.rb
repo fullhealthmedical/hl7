@@ -1,5 +1,6 @@
 require "active_support/core_ext/module/attribute_accessors"
 require "active_support/core_ext/string/inflections"
+require "active_support/core_ext/class/attribute"
 
 require_relative "hl7/version"
 require_relative "hl7/configuration"
@@ -11,7 +12,6 @@ require_relative "hl7/msh"
 module HL7
   mattr_accessor :default_configuration
   self.default_configuration = Configuration.new
-
   def self.config
     yield default_configuration
   end

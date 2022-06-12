@@ -1,0 +1,27 @@
+name: MSH
+fields:
+  - Field Separator
+  - Encoding Characters
+  - Sending Application
+  - Sending Facility
+  - Receiving Application
+  - Receiving Facility
+  - Date/Time of Message
+  - Security
+  - Message Type
+  - Message Control ID
+  - Processing ID
+  - Version ID
+  - Sequence Number
+  - Continuation Pointer
+  - Accept Acknowledgment Type
+  - Application Acknowledgment Type
+  - Country Code
+  - Character Set
+  - Principal Language Of Message
+  - Alternate Character Set Handling Scheme
+  - Message Profile Identifier
+  - Sending Responsible Organization
+  - Receiving Responsible Organization
+  - Sending Network Address
+  - Receiving Network Address

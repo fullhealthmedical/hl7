@@ -14,7 +14,7 @@ RSpec.describe HL7::MSH do
     expect(message.fields.size).to eq(12)
   end
 
-  context 'reading configuration' do
+  context 'when reading configuration' do
     it "reads configuration from segment" do
       msh = HL7::MSH.new(content)
       expect(msh.configuration.field_separator).to eq("|")
@@ -40,5 +40,15 @@ RSpec.describe HL7::MSH do
         expect(msh.configuration.truncation_char).to eq("#")
       end
     end
+  end
+
+  describe "fields defintions" do
+    it "defines correct number of fields" do
+      expect(described_class.fields_count).to eq(2)
+    end
+
+    # it "reads field_separator" do
+    #   expect(msh.field_separator).to eq("|")
+    # end
   end
 end

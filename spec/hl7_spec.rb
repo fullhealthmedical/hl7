@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+require 'spec_helper'
 
 RSpec.describe HL7 do
   it "has a version number" do
@@ -18,6 +18,16 @@ RSpec.describe HL7 do
       expect(configuration.subcomponent_separator).to eq("&")
       expect(configuration.repetition_separator).to eq("~")
       expect(configuration.escape_char).to eq("\\")
+    end
+  end
+
+  context 'parse' do
+    let(:content) { "MSH|^~\&|SENDING|SENDING|SENDING|20100401|0900||ADT^A04|123456789|P|2.3\r" }
+
+    it "builds a message" do
+      message = HL7.parse(content)
+      expect(message).not_to be nil
+      expect(message.segments.size).to eq(1)
     end
   end
 end

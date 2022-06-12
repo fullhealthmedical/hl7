@@ -2,6 +2,8 @@ require 'active_support/core_ext/module/attribute_accessors'
 
 require_relative "hl7/version"
 require_relative "hl7/configuration"
+require_relative "hl7/message"
+require_relative "hl7/segment"
 
 module HL7
   mattr_accessor :default_configuration
@@ -9,5 +11,9 @@ module HL7
 
   def self.config
     yield default_configuration
+  end
+
+  def self.parse(content)
+    Message.new(content)
   end
 end

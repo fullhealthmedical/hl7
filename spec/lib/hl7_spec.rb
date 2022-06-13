@@ -18,6 +18,7 @@ RSpec.describe HL7 do
       expect(configuration.subcomponent_separator).to eq("&")
       expect(configuration.repetition_separator).to eq("~")
       expect(configuration.escape_char).to eq("\\")
+      expect(configuration.truncation_char).to be_nil
     end
   end
 

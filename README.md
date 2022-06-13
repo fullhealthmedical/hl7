@@ -16,7 +16,30 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-TODO: Write usage instructions here
+Read an HL7 message
+
+```
+# read
+content = "MSH|^~\\&#|SENDING|SENDING|SENDING|20100401|0900||ADT^A04|123456789|P|2.3\r"
+
+# parse the content to an HL7:Message
+message = HL7.parse(content)
+
+# read the message configuration
+message.config.field_separator # => |
+message.config.component_separator # => ^
+
+# read segments
+message.segments.size # => 1
+
+# read segments name
+message.segments.first.name # => 'MSH'
+
+# get an specific segment
+message.get('MSH') # => HL7::MSH
+
+
+```
 
 ## Development
 

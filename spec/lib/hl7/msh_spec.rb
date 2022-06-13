@@ -9,7 +9,7 @@ RSpec.describe HL7::MSH do
 
   it { is_expected.to be_named_as 'MSH' }
 
-  it "builds a message with fields" do
+  it "builds a MSH instance with fields with fields" do
     message = HL7::MSH.new(content)
     expect(message.fields.size).to eq(12)
   end
@@ -43,12 +43,22 @@ RSpec.describe HL7::MSH do
   end
 
   describe "fields defintions" do
+    subject(:msh) { HL7::MSH.new(content) }
+
     it "defines correct number of fields" do
       expect(described_class.fields_count).to eq(2)
     end
 
-    # it "reads field_separator" do
-    #   expect(msh.field_separator).to eq("|")
-    # end
+    it "reads field_separator" do
+      expect(msh.field_separator).to eq("|")
+    end
+
+    it "reads encoding_characters" do
+      expect(msh.encoding_characters).to eq("^~\\&")
+    end
+
+    context 'when encoding_characters includes ' do
+
+    end
   end
 end

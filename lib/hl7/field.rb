@@ -1,7 +1,7 @@
 module HL7
-  class Field
-    def initialize(content)
-      @content = content
-    end
+  class Field < String
+    # def initialize(content)
+    #   @content = content
+    # end
   end
 end

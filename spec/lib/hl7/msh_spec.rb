@@ -43,12 +43,15 @@ RSpec.describe HL7::MSH do
   end
 
   describe "fields defintions" do
+    subject(:msh) { HL7::MSH.new(content) }
+
     it "defines correct number of fields" do
       expect(described_class.fields_count).to eq(2)
     end
 
-    # it "reads field_separator" do
-    #   expect(msh.field_separator).to eq("|")
-    # end
+    it { is_expected.to }
+    it "reads field_separator" do
+      expect(msh.field_separator).to eq("|")
+    end
   end
 end

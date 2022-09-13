@@ -8,7 +8,7 @@ module HL7
       super(content)
       @configuration = Configuration.from_msh(content)
 
-      @fields = [
+      @values = [
         Field.new(configuration.field_separator),
         Field.new(configuration.encoding_characters)
       ] + content.to_s.split(configuration.field_separator)[2..].map { |f| Field.new(f) }

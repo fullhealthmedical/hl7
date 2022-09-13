@@ -11,7 +11,7 @@ RSpec.describe HL7::MSH do
 
   it "builds a MSH instance with fields with fields" do
     message = HL7::MSH.new(content)
-    expect(message.fields.size).to eq(12)
+    expect(message.values.size).to eq(12)
   end
 
   context 'when reading configuration' do

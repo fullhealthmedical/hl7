@@ -1,12 +1,14 @@
 require "active_support/core_ext/module/attribute_accessors"
 require "active_support/core_ext/string/inflections"
 require "active_support/core_ext/class/attribute"
+require "active_support/concern"
 
 require_relative "hl7/version"
 require_relative "hl7/configuration"
 require_relative "hl7/field_definition"
 require_relative "hl7/field"
 require_relative "hl7/message"
+require_relative "hl7/segments/fields"
 require_relative "hl7/segment"
 require_relative "hl7/msh"
 
